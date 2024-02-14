@@ -9,12 +9,17 @@
 </head>
 
 <body>
+    
   <header class="display-flex justify-space-between align-center p-2">
     <h1>
-      User Registry
+      ShareSphere
     </h1>
     {{#if logged_in}}
     <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#profile">Profile</a>
+        <input type="text" id="searchBar" placeholder="Search...">
       <button class="btn" id="logout">logout</button>
     </nav>
     {{/if}}
