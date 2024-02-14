@@ -35,6 +35,13 @@ User.init(
         len: [8],
       },
     },
+    community_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'community',
+        key: 'id',
+      },
+    },
   },
   {
     hooks: {
