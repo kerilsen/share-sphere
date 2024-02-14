@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Community } = require('../../models');
-const withAuth = require('../../utils/auth');
+/* const withAuth = require('../../utils/auth'); */
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', /* withAuth, */ async (req, res) => {
   try {
     const newCommunity = await Community.create({
       ...req.body,
@@ -52,7 +52,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', /* withAuth, */ async (req, res) => {
   try {
     const communityData = await Community.destroy({
       where: {
