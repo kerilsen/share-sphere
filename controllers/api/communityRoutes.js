@@ -15,23 +15,6 @@ router.post('/', /* withAuth, */ async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
-    // find a single community by its `id`
-    try {
-      const communityData = await Community.findByPk(req.params.id, {
-        include: [{ model: User }]
-      });
-  
-      if (!communityData) {
-        res.status(404).json({ message: 'No community found with this id!' });
-        return;
-      }
-  
-      res.status(200).json(communityData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-});
 
 router.put('/:id', async (req, res) => {
     // updates a community by id
