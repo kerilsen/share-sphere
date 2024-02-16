@@ -31,7 +31,7 @@ CommunityMembers.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'community_members',
+    modelName: 'community_members_table',
   }
 );
 

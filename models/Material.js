@@ -24,9 +24,17 @@ Material.init(
       defaultValue: 50,
     },
     availability: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-      },
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
