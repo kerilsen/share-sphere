@@ -23,6 +23,26 @@ router.get('/', /* withAuth, */ async (req, res) => {
     }
 });
 
+router.get('/community', /* withAuth, */ async (req, res) => {
+  try {
+    // Get all materials and JOIN with user data and community data
+    const communityData = await Community.findAll({
+      include: [ { model: Material, attributes: ['material_name', 'cost', 'availability', 'description', 'user_id'], } ],
+    });
+
+    // Serialize data so the template can read it
+    const communities = communityData.map((community) => community.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('community', { 
+      communities, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/material/:id', /* withAuth, */ async (req, res) => {
     try {
       // Get material by ID, JOIN with user data and community data
