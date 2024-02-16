@@ -52,6 +52,7 @@ User.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
+    foreign_key_checks: 0
   }
 );
 

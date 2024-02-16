@@ -18,6 +18,7 @@ Community.init(
     zipcode: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 123456
     },
   },
   {
@@ -26,6 +27,7 @@ Community.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'community',
+    foreign_key_checks: 0
   }
 );
 

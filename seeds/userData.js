@@ -51,3 +51,7 @@ const userData = [
 { name: "Selina Jenkins", email: "sjenkins@gmail.com", username: "sjenkins", password: "password", community_id: 3 },
 { name: "Enzo Stevenson", email: "estevenson@gmail.com", username: "estevenson", password: "password", community_id: 3 }
 ];
+
+const seedUsers = () => User.bulkCreate(userData);
+
+module.exports = seedUsers;
