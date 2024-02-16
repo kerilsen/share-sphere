@@ -37,4 +37,4 @@ Community.belongsToMany(User, {
     as: "community_members"
 });
 
-module.exports = { User, Material, Community };
+module.exports = { User, Material, Community, CommunityMembers };

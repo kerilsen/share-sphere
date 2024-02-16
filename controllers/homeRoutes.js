@@ -3,9 +3,19 @@ const { User, Material, Community } = require('../models');
 /* const withAuth = require('../utils/auth'); */
 
 //commenting out the withAuth for now so we can work on the pages without getting redirected
-router.get('/', async (req, res) => {
+router.get('/', /* withAuth, */ async (req, res) => {
     try {
-      res.render('homepage', {  
+      // Get all materials and JOIN with user data and community data
+      const materialData = await Material.findAll({
+        include: [ { model: User, attributes: ['name'], }, { model: Community, attributes: ['community_name'] } ],
+      });
+  
+      // Serialize data so the template can read it
+      const materials = materialData.map((material) => material.get({ plain: true }));
+  
+      // Pass serialized data and session flag into template
+      res.render('homepage', { 
+        materials, 
         logged_in: req.session.logged_in 
       });
     } catch (err) {
@@ -16,15 +26,18 @@ router.get('/', async (req, res) => {
 router.get('/community', /* withAuth, */ async (req, res) => {
   try {
     // Get all materials and JOIN with user data and community data
-    const materialData = await Material.findAll({
-      include: [ { model: User, attributes: ['name'], }, { model: Community, attributes: ['community_name'] } ],
+    const communityData = await Community.findAll({
+      include: [ { model: Material, attributes: ['material_name', 'cost', 'availability', 'description', 'user_id'], } ],
     });
 
     // Serialize data so the template can read it
-    const materials = materialData.map((material) => material.get({ plain: true }));
+    const communities = communityData.map((community) => community.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.status(200).json({materialData});
+    res.render('community', { 
+      communities, 
+      logged_in: req.session.logged_in 
+    });
   } catch (err) {
     res.status(500).json(err);
   }
