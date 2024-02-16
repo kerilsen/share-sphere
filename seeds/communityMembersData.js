@@ -1,6 +1,8 @@
 const { CommunityMembers } = require('../models');
+
 const communityMembersData = [
-    { user_id: 1, community_id: 1}, 
+    { user_id: 1, community_id: 1},
+    { user_id: 1, community_id: 2},  
     { user_id: 2, community_id: 1}, 
     { user_id: 3, community_id: 1}, 
     { user_id: 4, community_id: 1}, 
@@ -48,6 +50,12 @@ const communityMembersData = [
     { user_id: 46, community_id: 3}, 
     { user_id: 47, community_id: 3}, 
     { user_id: 48, community_id: 3}, 
-    { user_id: 49, community_id: 3}, 
+    { user_id: 49, community_id: 3},
+    { user_id: 49, community_id: 1},
+    { user_id: 49, community_id: 2}, 
     { user_id: 50, community_id: 3}
 ];
+
+const seedCommunityMembers = () => CommunityMembers.bulkCreate(communityMembersData);
+
+module.exports = seedCommunityMembers;

@@ -13,3 +13,7 @@ const communityData = [
         zip_code: "59901",
     }
 ];
+
+const seedCommunities = () => Community.bulkCreate(communityData);
+
+module.exports = seedCommunities;
