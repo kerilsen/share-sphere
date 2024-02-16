@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Community extends Model {}
+class CommunityMembers extends Model {}
 
-Community.init(
+CommunityMembers.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,13 +11,19 @@ Community.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    community_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    zipcode: {
+    user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+    community_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'community',
+        key: 'id',
+      },
     },
   },
   {
@@ -25,8 +31,8 @@ Community.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'community',
+    modelName: 'community_members_table',
   }
 );
 
-module.exports = Community;
+module.exports = CommunityMembers;
