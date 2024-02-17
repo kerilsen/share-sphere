@@ -14,13 +14,15 @@
     <h1>
       ShareSphere
     </h1>
+    <a href="#home">Home</a>
+    <a href="/auth/loginSignup">Login/Signup</a> <!-- Added link to login/signup page -->
     {{#if logged_in}}
     <nav>
-        <a href="#home">Home</a>
+       
         <a href="#categories">Categories</a>
         <a href="#profile">Profile</a>
         <input type="text" id="searchBar" placeholder="Search...">
-      <button class="btn" id="logout">logout</button>
+      <button class="btn" id="logout">Logout</button>
     </nav>
     {{/if}}
   </header>
@@ -34,14 +36,20 @@
     <h2>ShareSphere</h2>
     <p>&copy; 2024 Group Two. All rights reserved.</p>
     <ul>
-        <!-- TODO: Put in links to these pages/decide if we want to keep or change  -->
+        <!-- TODO:Links to the other pages  -->
         <li><a href=#about-us> About Us  </a></li>
-        <li><a href=#help-center> Help Center</a></li>
+        <li><a href=#sharing-policy> Sharing Policy</a></li>
     </ul>    
   </footer>
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+  <script>
+    document.getElementById('logout').addEventListener('click', function() {
+        // Perform logout action here, such as redirecting to the logout route
+        window.location.href = '/api/user/logout';
+    });
+  </script>
   {{/if}}
 </body>
 
