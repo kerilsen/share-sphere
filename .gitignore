@@ -12,6 +12,7 @@
 .env
 .DS_Store
 package-lock.json
+config.json
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

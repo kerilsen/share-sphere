@@ -1,0 +1,30 @@
+
+/* style for the frames around the signup/signin forms */
+.frame {
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    text-align: left;
+    margin-top: 20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+/* style for the frame headings login signup */
+.frame h2 {
+  text-align: center;
+}
+.divider {
+    border-right: 5px solid #dee2e6;
+ }
+
+ /* style for the frames around the signup/signin forms */
+.signup-form, .login-form {
+    padding: 20px;
+}
+
+/* Styling of buttons for color matching our website*/
+.custom-button {
+    background-color: #443FDE;
+    color: white;
+    
+}
