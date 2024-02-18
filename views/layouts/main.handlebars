@@ -14,7 +14,7 @@
   <header>
 
       <!-- Hero -->
-      <div class="p-5 text-center bg-image rounded-3" style="background-image: url('../../public/images/landing_page/Landing-Page-Hero.png');
+      <div class="p-5 text-center bg-image rounded-3" style="background-image: url('images/landing_page/Landing_Page_Hero.png');
 height: 500px;
 position: relative;">
     <div class="mask" style="position: absolute;
@@ -35,36 +35,22 @@ position: relative;">
 </div>
       <!-- Hero -->
     
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      ShareSphere
-    </h1>
-    <a href="#home">Home</a>
-    <a href="/auth/loginSignup">Login/Signup</a> <!-- Added link to login/signup page -->
+
     {{#if logged_in}}
-    <nav>
-       
-        <a href="#categories">Categories</a>
-        <a href="#profile">Profile</a>
-        <input type="text" id="searchBar" placeholder="Search...">
-      <button class="btn" id="logout">Logout</button>
-    </nav>
+    {{!--TODO: Add code here for when user is logged in--}}
     {{/if}}
-  </header>
-  <main class="container container-fluid mt-5">
+
+
     {{{ body }}}
   </main>
-  <footer>
-      
-  </footer>
-   <footer>
-    <h2>ShareSphere</h2>
-    <p>&copy; 2024 Group Two. All rights reserved.</p>
-    <ul>
-        <!-- TODO:Links to the other pages  -->
-        <li><a href=#about-us> About Us  </a></li>
-        <li><a href=#sharing-policy> Sharing Policy</a></li>
-    </ul>    
+
+<footer class="bg-body-tertiary text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <a class="text-body" >ShareSphere</a>
+    </div>
+    <!-- Copyright -->
   </footer>
 
   {{#if logged_in}}
