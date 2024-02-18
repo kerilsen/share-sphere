@@ -17,8 +17,10 @@ Community.init(
     },
     zipcode: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       defaultValue: 123456
+    },
+    filename: {
+      type: DataTypes.STRING,
     },
   },
   {
