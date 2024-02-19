@@ -1,16 +1,16 @@
 const { Community } = require('../models')
 const communityData = [
     {
-        community_name: "Ridgemont",
-        zip_code: "93165",
+        community_name: "East Bay",
+        zip_id: 1,
     },
     { 
-        community_name: "Dunder Mifflin",
-        zip_code: "18444",
+        community_name: "Peninsula",
+        zip_id: 2,
     },
     {
-        community_name: "Grand Oaks Retirement Community",
-        zip_code: "59901",
+        community_name: "South Bay",
+        zip_id: 3,
     }
 ];
 
