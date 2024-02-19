@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Zipcode extends Model {}
+class Zipcode extends Model { }
 
 Zipcode.init(
     {
@@ -19,6 +19,15 @@ Zipcode.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         }
-    });
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'zipcode',
+        foreign_key_checks: 0
+    }
+);
 
 module.exports = Zipcode;
