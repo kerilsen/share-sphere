@@ -15,9 +15,8 @@ Community.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    zipcode: {
+    zip_id: {
       type: DataTypes.INTEGER,
-      defaultValue: 123456
     },
     filename: {
       type: DataTypes.STRING,
