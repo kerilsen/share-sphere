@@ -31,7 +31,11 @@
       </ul>
       <div class="d-flex">
         <div class="login">
+          {{#if logged_in}}
+          <a class="btn btn-primary" id="logout" role="button"> Log Out </a>
+          {{else}}
           <a class="btn btn-primary" href="/loginSignup" role="button"> Log In/Sign Up </a>
+          {{/if}}
         </div>
       </div>
     </div>
