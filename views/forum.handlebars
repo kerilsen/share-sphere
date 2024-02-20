@@ -1,0 +1,17 @@
+{{#each posts as |post| }}
+<div class="row justify-content-center">
+<div class="container-md text-center post align-self-center justify-content-center">
+  <div class="">
+    <h3 class="title row align-self-center justify-content-center">
+      <a href="/post/{{post.id}}">{{post.title}}</a>
+    </h3>
+    <p class="subheader row align-self-center justify-content-center" >Created by {{post.user.name}} on {{format_date post.date_created}}</p>
+    <div class="body row align-self-center justify-content-center">
+    <p>
+      {{post.post_body}}
+    </p>
+    </div>
+  </div> 
+</div>
+</div>
+{{/each}}
