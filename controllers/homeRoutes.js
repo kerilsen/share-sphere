@@ -54,18 +54,18 @@ router.get('/material/:id', /* withAuth, */ async (req, res) => {
 router.get('/profile', /* withAuth, */ async (req, res) => {
     try {
       // Find the logged in user based on the session ID
-      const userData = await User.findAll( 
-        { where: 
-          {user_id: req.session.user_id, 
-           include: [{ model: Material, attributes: ['material_name', 'description', 'filename', 'cost', 'category', 'user_id', 'availability']}],
-           include: [{ model: Post, attributes: ['title', 'post_body', 'date_created', 'user_id']}],
-          }
-        });
+      const userData = await Material.findAll( { where: {user_id: req.session.user_id, include: [{ model: User, exclude: ['password'],},]}});
   
       const user = userData.get({ plain: true });
+
+      const postData = await Post.findAll({ where: { user_id: req.session.user_id }, include: [{ model: User, attributes: ['name'], },], });
+
+      const posts = postData.map((post) => post.get({ plain: true }));
+  
   
       res.render('profile', {
-        ...user,
+        user,
+        posts,
         logged_in: req.session.logged_in
       });
     } catch (err) {
@@ -77,7 +77,7 @@ router.get('/forum', async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
-      include: [{ model: User, attributes: ['name'], },],
+      include: [{ model: User, attributes: ['name', 'filename'], },],
     });
 
     // Serialize data so the template can read it
