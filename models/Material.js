@@ -19,9 +19,9 @@ Material.init(
       type: DataTypes.STRING,
     },
     cost: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 50,
+      defaultValue: '$50',
     },
     availability: {
       type: DataTypes.BOOLEAN,
@@ -56,6 +56,7 @@ Material.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'material',
+    foreign_key_checks: 0
   }
 );
 

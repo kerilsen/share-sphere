@@ -15,9 +15,11 @@ Community.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    zipcode: {
+    zip_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+    },
+    filename: {
+      type: DataTypes.STRING,
     },
   },
   {
@@ -26,6 +28,7 @@ Community.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'community',
+    foreign_key_checks: 0
   }
 );
 

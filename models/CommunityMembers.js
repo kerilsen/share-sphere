@@ -32,6 +32,7 @@ CommunityMembers.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'community_members_table',
+    foreign_key_checks: 0
   }
 );
 

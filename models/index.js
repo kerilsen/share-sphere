@@ -2,6 +2,7 @@ const User = require('./User');
 const Material = require('./Material');
 const Community = require('./Community');
 const CommunityMembers = require('./communityMembers');
+const Zipcode = require('./Zipcode');
 
 User.hasMany(Material, {
   foreignKey: 'user_id',
@@ -21,6 +22,15 @@ Material.belongsTo(Community, {
   foreignKey: 'community_id'
 });
 
+Community.hasMany(Zipcode, {
+  foreignKey: 'community_id',
+  onDelete: 'CASCADE'
+});
+
+Zipcode.belongsTo(Community, {
+  foreignKey: 'community_id'
+});
+
 User.belongsToMany(Community, {
     through: {
         model: CommunityMembers,
@@ -37,4 +47,4 @@ Community.belongsToMany(User, {
     as: "community_members"
 });
 
-module.exports = { User, Material, Community };
+module.exports = { User, Material, Community, CommunityMembers, Zipcode };
