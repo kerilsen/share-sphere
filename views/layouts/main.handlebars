@@ -31,7 +31,7 @@ position: relative;">
             <h1 class="mb-3">ShareSphere</h1>
             <h4 class="mb-3"> Connect, Share, Thrive: Your Personalized Community Sharing Hub </h4>
             {{#if logged_in}}
-            <h5> Welcome, {{name}}!</h5>
+            <h5> You Are Logged In! </h5>
             {{/if}}
         </div>
     </div>
@@ -41,7 +41,7 @@ position: relative;">
    <!-- Bootstrap navbar  -->
      <nav class="navbar navbar-expand-sm text-white bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">ShareSphere</a>
+    <a class="navbar-brand" href="/">ShareSphere</a>
     {{!-- This is the toggler for mobile view. Need to make it look better, but with background color blue it is visible  --}}
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -51,7 +51,7 @@ position: relative;">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
