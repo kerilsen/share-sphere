@@ -30,6 +30,9 @@ position: relative;">
         <div class="text-white">
             <h1 class="mb-3">ShareSphere</h1>
             <h4 class="mb-3"> Connect, Share, Thrive: Your Personalized Community Sharing Hub </h4>
+            {{#if logged_in}}
+            <h5> Welcome, {{name}}!</h5>
+            {{/if}}
         </div>
     </div>
 </div>
