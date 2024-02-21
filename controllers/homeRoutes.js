@@ -79,7 +79,7 @@ router.get('/profile', async (req, res) => {
     }
 });
 
-router.get('/forum', async (req, res) => {
+router.get('/messageBoard', async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
@@ -90,7 +90,7 @@ router.get('/forum', async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('forum', {
+    res.render('messageBoard', {
       posts,
       logged_in: req.session.logged_in
     });
@@ -99,7 +99,7 @@ router.get('/forum', async (req, res) => {
   }
 });
 
-router.get('/forumpost/:id', /* withAuth, */ async (req, res) => {
+router.get('/messageBoardPost/:id', /* withAuth, */ async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
@@ -120,7 +120,7 @@ router.get('/forumpost/:id', /* withAuth, */ async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    res.render('forumpost', {
+    res.render('messageBoardPost', {
       post,
       logged_in: req.session.logged_in
     });
