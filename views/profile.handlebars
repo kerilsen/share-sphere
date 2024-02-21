@@ -1,28 +1,16 @@
 <div>
-    {{#each posts as |post| }}
-    <div class="row mb-4 col-md-5 post">
-        <div class="">
-            <h3>
-                <a href="/forumpost/{{post.id}}">{{post.title}}</a>
-            </h3>
-            <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
-        </div>
-        <div class="">
-            <p>
-                {{post.post_body}}
-            </p>
-        </div>
-    </div>
-    {{/each}}
-    <div>
-        <div>
-            {{> new-post}}
-        </div>
-    </div>
+    <h2>
+        {{name}}'s Profile
+    </h2>
 </div>
 
 <div>
-    {{#each material as |materials|}}
+    <div>
+        <h3>
+            Your Active Listings
+        </h3>
+    </div>
+    {{#each materials as |material|}}
     <div class="row mb-4 col-md-5 post">
         <div class="">
             <h3>
@@ -52,6 +40,34 @@
             <div class="">
                 {{> listing}}
             </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>
+            Your Active Posts
+        </h3>
+    </div>
+    {{#each posts as |post| }}
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">
+                <a href="/forumpost/{{post.id}}">{{post.title}}</a>
+            </h3>
+            <p class="card-subtitle">Created by {{post.user.name}} on {{format_date post.date_created}}</p>
+        </div>
+        <div class="card-text">
+            <p>
+                {{post.post_body}}
+            </p>
+        </div>
+    </div>
+    {{/each}}
+    <div class="card">
+        <div class="card-body">
+            {{> new-post}}
         </div>
     </div>
 </div>
