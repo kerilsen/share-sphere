@@ -12,7 +12,7 @@ const postFormHandler = async (event) => {
   
       if (response.ok) {
         console.log(response);
-        document.location.replace('/forum');
+        document.location.replace('/messageBoard');
       } else {
         alert('Failed to create new post.');
       }

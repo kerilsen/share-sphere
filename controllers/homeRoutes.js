@@ -1,9 +1,8 @@
 const router = require('express').Router();
 const { User, Material, Community, Post, Comment } = require('../models');
-/* const withAuth = require('../utils/auth'); */
+const withAuth = require('../utils/auth');
 
-//commenting out the withAuth for now so we can work on the pages without getting redirected
-router.get('/', /* withAuth, */ async (req, res) => {
+router.get('/', async (req, res) => {
     try {
       res.render('homepage', {  
         logged_in: req.session.logged_in 
@@ -51,7 +50,7 @@ router.get('/material/:id', /* withAuth, */ async (req, res) => {
     }
 });
 
-router.get('/profile', async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
     try {
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {
@@ -79,7 +78,7 @@ router.get('/profile', async (req, res) => {
     }
 });
 
-router.get('/messageBoard', async (req, res) => {
+router.get('/messageBoard', withAuth, async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
@@ -99,7 +98,7 @@ router.get('/messageBoard', async (req, res) => {
   }
 });
 
-router.get('/messageBoardPost/:id', /* withAuth, */ async (req, res) => {
+router.get('/messageBoardPost/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
