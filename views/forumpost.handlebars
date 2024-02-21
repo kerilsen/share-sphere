@@ -1,0 +1,31 @@
+<div class="card" style="width: 24rem">
+  <div class="card-body">
+    <h3 class="card-title">
+        {{post.title}}
+    </h3>
+    <h4 class="card-subtitle mb-2 text-body-secondary">
+        Created by {{post.user.name}} on {{format_date post.date_created}}
+    </h4>
+  </div>
+  <div class="card-text">
+    <p>
+      {{post.post_body}}
+    </p>
+  </div>
+</div>
+<div class="container text-center">
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="comment">
+                {{#each post.comments as |comment|}}
+                {{> comments}}
+                {{/each}}
+            </div>
+            <div>
+                {{> new-comment}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/new-comment.js"></script>

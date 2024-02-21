@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Material, Community } = require('../models');
+const { User, Material, Community, Post, Comment } = require('../models');
 /* const withAuth = require('../utils/auth'); */
 
 //commenting out the withAuth for now so we can work on the pages without getting redirected
@@ -51,10 +51,22 @@ router.get('/material/:id', /* withAuth, */ async (req, res) => {
     }
 });
 
-router.get('/profile', /* withAuth, */ async (req, res) => {
+router.get('/profile', async (req, res) => {
     try {
       // Find the logged in user based on the session ID
-      const userData = await Material.findAll( { where: {user_id: req.session.user_id, include: [{ model: User, exclude: ['password'], attributes: ['material_name', 'description', 'cost', 'category']},]}});
+      const userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+        include: [{ model: Post, 
+          include: {
+          model: User,
+          attributes: ["name"],
+        }, }, 
+        { model: Material, 
+          include: {
+          model: User,
+          attributes: ["name"],
+        }, }],
+      });
   
       const user = userData.get({ plain: true });
   
@@ -65,6 +77,56 @@ router.get('/profile', /* withAuth, */ async (req, res) => {
     } catch (err) {
       res.status(500).json(err);
     }
+});
+
+router.get('/forum', async (req, res) => {
+  try {
+    // Get all posts and JOIN with user data
+    const postData = await Post.findAll({
+      include: [{ model: User, attributes: ['name', 'filename'], },],
+    });
+
+    // Serialize data so the template can read it
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('forum', {
+      posts,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/forumpost/:id', /* withAuth, */ async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["id", "name"],
+        },
+        {
+          model: Comment,
+          attributes: ['id', 'comment_body', 'user_id', 'post_id', 'date_created'],
+          include: {
+            model: User,
+            attributes: ["name"],
+          },
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('forumpost', {
+      post,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/loginSignup', (req, res) => {
