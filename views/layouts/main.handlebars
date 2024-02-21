@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Include bootstrap CDN  -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <title>ShareSphere Landing Page</title>
+  <title>ShareSphere Main Page</title>
 </head>
 
 <body>
@@ -61,6 +61,14 @@ position: relative;">
             <li><a class="dropdown-item" href="#">East Bay</a></li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Message Board</a>
+        </li>
+        {{#if logged_in}}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Profile</a>
+        </li>
+        {{/if}}
       </ul>
       <div class="d-flex">
         <div class="login">
