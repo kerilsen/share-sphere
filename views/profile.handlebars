@@ -14,7 +14,7 @@
     <div class="row mb-4 col-md-5 post">
         <div class="">
             <h3>
-                <a href="/post/{{material.id}}">{{material.material_name}}</a>
+                <a href="/material/{{material.id}}">{{material.material_name}}</a>
             </h3>
             <p>Posted by {{material.user.name}}</p>
             {{#if material.availability}}
@@ -41,7 +41,7 @@
         </p>
         <div class="collapse" id="collapseExample">
             <div class="">
-                {{> listing}}
+                {{> upload}}
             </div>
         </div>
     </div>
@@ -57,7 +57,7 @@
     <div class="card">
         <div class="card-body">
             <h3 class="card-title">
-                <a href="/forumpost/{{post.id}}">{{post.title}}</a>
+                <a href="/messageBoardPost/{{post.id}}">{{post.title}}</a>
             </h3>
             <p class="card-subtitle">Created by {{post.user.name}} on {{format_date post.date_created}}</p>
         </div>
