@@ -1,5 +1,5 @@
  <!-- What should the form action be? -->
- <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+ {{!-- <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
   <label for="itemName">Enter the item name: </label>
   <input type="textarea" size="50px" id="itemName" placeholder="i.e. Shade canopy" /><br><br>
   <label for="itemDescription">Give a brief description of your item:</label><br>
@@ -30,4 +30,68 @@
   <p>Upload a picture of your item</p>
   <input type="file" name="image" id="imageFile" />
   <button type="submit" id="upload">Upload</button>
-</form>
+</form> --}}
+
+<body class="upload-form">
+
+    <!-- <form action="index.html" method="post"> -->
+    <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm" class="upload-form">
+
+
+        <h1 class="upload-form">Create a New Listing</h1>
+
+        <fieldset class="upload-form">
+
+            <!-- If we want to have multiple parts of the form, we could use this -->
+            <!-- <legend><span class="number">1</span> Item Info </legend> -->
+
+            <label class="upload-form" for="itemName">Item Name:</label>
+            <input class="upload-form" type="text" id="itemName" placeholder="i.e. Shade canopy" name="itemName" >
+
+            <label class="upload-form" for="itemDescription">Brief Description:</label>
+            <textarea class="upload-form" rows="4" cols="50" name="itemDescription" id="itemDescription"
+                placeholder="A white 10' x 10' 'one person setup' shade canopy with wheel bag and ground stakes"></textarea><br><br>
+
+            <label class="upload-form" for="categories">Category:</label>
+            <select class="upload-form" id="categories" name="categories" placeholder="events">
+                <!-- We can create categories in the future if we would like to -->
+                <!-- <optgroup label="Categories"> -->
+                    <option value="frontend_developer">Camping</option>
+                    <option value="php_developer">Events</option>
+                    <option value="python_developer">Exercise</option>
+                    <option value="rails_developer">Children</option>
+                    <option value="web_designer">Hardware</option>
+                    <option value="wordpress_developer">Medical</option>
+                    <option value="wordpress_developer">Outdoor</option>
+                    <option value="wordpress_developer">Discover passes</option>
+                    <option value="wordpress_developer">Games</option>
+
+                    <!-- </optgroup>
+                <optgroup label="Mobile">
+                    <option value="android_developer">Android Developer</option>
+                    <option value="ios_developer">iOS Developer</option>
+                    <option value="mobile_designer">Mobile Designer</option>
+                </optgroup> -->
+            </select>
+
+            <label class="upload-form" for="itemCost">Replacement Cost? </label>
+            <input class="upload-form" type="text" id="itemCost" placeholder="$50.00" name="itemCost">
+
+
+            <label class="upload-form" >Is this item currently available for loan?</label>
+            <input class="upload-form" type="radio" id="available" value="true" name="availibility">
+            <label for="available" class="light">Yes</label><br>
+
+            <input class="upload-form" type="radio" id="notAvailable" value="false" name="availability">
+            <label for="notAvailable" class="light last">No</label>
+
+
+            <label class="upload-form" >Upload a picture of your item</label>
+            <input class="upload-form" type="file" name="image" id="imageFile" />
+            <button class="upload-form" type="submit" id="upload">Upload</button>
+
+        </fieldset>
+
+    </form>
+
+</body>
