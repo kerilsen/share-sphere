@@ -1,4 +1,25 @@
-
+/* style for the main landing page */
+ 
+.hero-image {
+  background-image: url('images/landing_page/Landing_Page_Hero.png');
+  background-size: cover;
+  height: 500px;
+}
+.hero-text h1, .hero-text h2, .hero-text h5 {
+  font-weight: bold;
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+.hero-text .container-fluid {
+  padding: 0;
+}
+ 
 /* style for the frames around the signup/signin forms */
 .frame {
     border: 1px solid #dee2e6;
