@@ -1,6 +1,6 @@
 const { Material } = require('../models')
 const materialData = [
-    { material_name: "Wheelchair", filename: "1201.jpg", cost: "$400.00", availability: 1,  category: "Medical", description: "Tristique et egestas quis ipsum. Neque volutpat ac tincidunt vitae.", user_id: 36, community_id: 3 },
+    { material_name: "Wheelchair", filename: "1201.jpg", cost: "$400.00", availability: 1, category: "Medical", description: "Tristique et egestas quis ipsum. Neque volutpat ac tincidunt vitae.", user_id: 36, community_id: 3 },
     { material_name: "Shade canopy", filename: "1202.jpg", cost: "$50.00", availability: 1, category: "Events", description: "Neque volutpat ac tincidunt vitae. Nunc sed blandit libero volutpat sed cras ornare.", user_id: 19, community_id: 1 },
     { material_name: "Wheelbarrow", filename: "1203.jpg", cost: "$40.00", availability: 1, category: "Hardware/Tools", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", user_id: 18, community_id: 1 },
     { material_name: "Table saw", filename: "1204.jpg", cost: "$80.00", availability: 1, category: "Hardware/Tools", description: "Tristique senectus et netus et malesuada fames. Amet consectetur adipiscing elit pellentesque habitant morbi.", user_id: 17, community_id: 1 },
