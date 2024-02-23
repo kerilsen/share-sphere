@@ -6,7 +6,7 @@
         <h4 class="card-title">{{material_name}}</h4>
       </a>
       {{#if filename}}
-      <img src="https://res.cloudinary.com/dzfv4d1jg/image/{{filename}}">
+      <img src="https://res.cloudinary.com/sharesphere/image/upload/c_thumb,g_auto,h_300,q_auto,w_300/{{filename}}">
       {{else}}
       <img src="../images/landing_page/icons{{placeholder_image category}}">
       {{/if}}
@@ -15,11 +15,13 @@
       </div>
       <!-- add if available button here -->
       {{#if availability}}
-            <p>This item is available for borrowing!</p>
-            {{else}}
-            <p>This item is not currently available for borrowing.</p>
-            {{/if}}
-      <b><p class="card-subtitle mb-2 text-body-secondary">Posted by {{user.name}}</p></b>
+      <p>This item is available for borrowing!</p>
+      {{else}}
+      <p>This item is not currently available for borrowing.</p>
+      {{/if}}
+      <b>
+        <p class="card-subtitle mb-2 text-body-secondary">Posted by {{user.name}}</p>
+      </b>
       <div class="card-text">
         <p>
           {{description}}
