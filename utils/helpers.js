@@ -6,23 +6,23 @@ module.exports = {
 
     placeholder_image: (category) => {
       if (category === 'Camping') {
-        return '<img src="../images/landing_page/icons/camping-icon.png">'
+        return '/camping-icon.png'
       } else if (category === 'Events') {
-        return '<img src="../images/landing_page/icons/event-supplies.png">'
+        return '/event-supplies.png'
       } else if (category === 'Exercise') {
-        return '<img src="../images/landing_page/icons/exercise-supplies.png">'
+        return '/exercise-supplies.png>'
       } else if (category === 'Children') {
-        return '<img src="../images/landing_page/icons/children-equipment.png">'
+        return '/children-equipment.png'
       } else if (category === 'Hardware') {
-        return '<img src="../images/landing_page/icons/tools-icon.png">'
+        return '/tools-icon.png'
       } else if (category === 'Medical') {
-        return '<img src="../images/landing_page/icons/medical-equipment.png">'
+        return '/medical-equipment.png'
       } else if (category === 'Outdoor') {
-        return '<img src="../images/landing_page/icons/camping-icon.png">'
+        return '/camping-icon.png'
       } else if (category === 'Discover passes') {
-        return '<img src="../images/landing_page/icons/event-game-passes.png">'
+        return '/event-game-passes.png'
       } else if (category === 'Games') {
-        return '<img src="../images/landing_page/icons/event-game-passes.png">'
+        return '/event-game-passes.png'
       }
     }
 };

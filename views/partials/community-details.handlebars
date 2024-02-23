@@ -1,22 +1,30 @@
-<section class="card">
-  <!-- The contents of this card links to the gallery page using the gallery ID -->
-  <a href="/material/{{id}}"><h2>{{material_name}}</h2></a>
-    {{#if filename}}
-    <img src="https://res.cloudinary.com/dzfv4d1jg/image/{{filename}}">
-    {{else}} 
-    {{placeholder_image category}}
-    {{/if}}
-    <!-- add if available button here -->
-    {{#if available}}
-     <span class="label label-success">Available</span> 
-    {{/if}}
-  </a>
-</section>
-
-<div>
-  <img src="../images/landing_page/icons/medical-equipment.png">
+<div class="col mx-2 my-3 justify-content-center">
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <!-- The contents of this card links to the gallery page using the gallery ID -->
+      <a href="/material/{{id}}">
+        <h4 class="card-title">{{material_name}}</h4>
+      </a>
+      {{#if filename}}
+      <img src="https://res.cloudinary.com/dzfv4d1jg/image/{{filename}}">
+      {{else}}
+      <img src="../images/landing_page/icons{{placeholder_image category}}">
+      {{/if}}
+      <div>
+        <p>{{category}}</p>
+      </div>
+      <!-- add if available button here -->
+      {{#if availability}}
+            <p>This item is available for borrowing!</p>
+            {{else}}
+            <p>This item is not currently available for borrowing.</p>
+            {{/if}}
+      <b><p class="card-subtitle mb-2 text-body-secondary">Posted by {{user.name}}</p></b>
+      <div class="card-text">
+        <p>
+          {{description}}
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-
-<p>
-  world
-</p>

@@ -1,12 +1,27 @@
 <section class="container">
-  <h2 class="community_name">{{community_name}}</h2>
-  <section class="flex-row justify-center">
-    {{#each materials as |material|}}
-    {{> community-details}}
-    {{/each}}
-  </section>
+  <h2 class="community_name text-center mxy-3">{{community_name}}</h2>
+
+  <div class="text-center mxy-3">
+    <h3>
+      Browse the listings below to see what is available for borrowing!
+    </h3>
+    <p>
+      Don't see the item you're looking for? Try posting a request on the <a href="/messageBoard">message board</a>.
+    </p>
+    <div>
+      {{> new-listing}}
+    </div>
+  </div>
+  <div class="container-sm text-center">
+
+      <section class="row justify-center">
+        {{#each materials as |material|}}
+        {{> community-details}}
+        {{/each}}
+      </section>
+
+  </div>
+
 </section>
 
-<div>
-  hello
-</div>
+<script src="./js/new-listing.js"></script>
