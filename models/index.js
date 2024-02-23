@@ -3,6 +3,8 @@ const Material = require('./Material');
 const Community = require('./Community');
 const CommunityMembers = require('./communityMembers');
 const Zipcode = require('./Zipcode');
+const Post = require('./Post');
+const Comment = require('./Comment');
 
 User.hasMany(Material, {
   foreignKey: 'user_id',
@@ -47,4 +49,31 @@ Community.belongsToMany(User, {
     as: "community_members"
 });
 
-module.exports = { User, Material, Community, CommunityMembers, Zipcode };
+User.hasMany(Post, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+Post.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+Comment.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+Post.hasMany(Comment, {
+  foreignKey: 'post_id',
+  onDelete: 'CASCADE'
+});
+
+Comment.belongsTo(Post, {
+  foreignKey: 'post_id'
+});
+
+module.exports = { User, Material, Community, CommunityMembers, Zipcode, Post, Comment };

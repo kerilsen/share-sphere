@@ -1,0 +1,42 @@
+<div class="text-center mxy-3">
+    <h2>
+        Message Board
+    </h2>
+    <p>
+        Need an item that isn't listed yet in your community? Make a request here!
+    </p>
+    <div>
+        {{> new-post}}
+    </div>
+</div>
+
+
+<div class="container-sm text-center">
+    <div class="row ">
+        {{#each posts as |post| }}
+        <div class="col mx-2 my-3 justify-content-center">
+            <div class="card" style="width: 18rem">
+                <div class="card-body">
+                    {{#if post.user.filename}}
+                        <img class="icon" width="35rem" height="35rem" src="/images/users/{{post.user.filename}}">
+                        {{else}}
+                        <img class="icon" width="35rem" height="35rem" src="/images/users/user_jan.jpg">
+                        {{/if}}
+                    <h3 class="card-title">
+                        <a href="/messageBoardPost/{{post.id}}">{{post.title}}</a>
+                    </h3>
+                    <h4 class="card-subtitle mb-2 text-body-secondary">Created by {{post.user.name}} on {{format_date
+                        post.date_created}}</h4>
+                    <div class="card-text">
+                        <p>
+                            {{post.post_body}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="./js/new-post.js"></script>
