@@ -1,9 +1,13 @@
 <section class="card">
   <!-- The contents of this card links to the gallery page using the gallery ID -->
-  <a href="/material/{{id}}">
+  <a href="/material/{{material.id}}">
     <!-- The card contains the material name as the card header -->
-    <header>{{name}}</header>
-    <!-- The card contains the first painting of the gallery -->
-    <img src="/images/{{paintings.[0].filename}}" alt="{{paintings.[0].description}}">
+    <header>{{material.material_name}}</header>
+    <!-- add if available button here -->
+    {{#if material.available}}
+     <span class="label label-success">Available</span> 
+    {{/if}}
+    <!-- The card will contain an image of the item from cloudinary -->
+    <img src="/images/{{material.[0].filename}}" alt="{{material.[0].description}}">
   </a>
 </section>

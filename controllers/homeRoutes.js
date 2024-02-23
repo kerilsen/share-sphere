@@ -13,15 +13,15 @@ router.get('/', /* withAuth, */ async (req, res) => {
     }
 });
 
-router.get('/community', /* withAuth, */ async (req, res) => {
+router.get('/community/:id', /* withAuth, */ async (req, res) => {
   try {
     // Get all materials and JOIN with user data and community data
-    const communityData = await Community.findAll({
+    const communityData = await Community.findByPk( req.params.id, {
       include: [ { model: Material, attributes: ['material_name', 'cost', 'availability', 'description', 'user_id'], } ],
     });
 
     // Serialize data so the template can read it
-    const communities = communityData.map((community) => community.get({ plain: true }));
+    const communities = communityData.get({ plain: true });
 
     // Pass serialized data and session flag into template
     res.render('community', { 
