@@ -1,0 +1,94 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#listingModal">
+    Make A New Listing
+</button>
+
+
+<div class="modal fade" id="listingModal" tabindex="-1" aria-labelledby="listingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="listingModalLabel">Create a New Listing</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <body class="upload-form">
+
+                    <!-- <form action="index.html" method="post"> -->
+                    <form id="uploadForm" class="upload-form">
+
+
+                        {{!-- <h1 class="upload-form">Create a New Listing</h1> --}}
+
+                        <fieldset class="upload-form">
+
+                            <!-- If we want to have multiple parts of the form, we could use this -->
+                            <!-- <legend><span class="number">1</span> Item Info </legend> -->
+
+                            <label class="upload-form" for="itemName">Item Name:</label>
+                            <input class="upload-form" type="text" id="material_name" placeholder="i.e. Shade canopy"
+                                name="itemName">
+
+                            <label class="upload-form" for="itemDescription">Brief Description:</label>
+                            <textarea class="upload-form" rows="4" cols="50" name="itemDescription" id="description"
+                                placeholder="A white 10' x 10' 'one person setup' shade canopy with wheel bag and ground stakes"></textarea><br><br>
+
+                            <label class="upload-form" for="categories">Category:</label>
+                            <select class="upload-form" id="category" name="categories" placeholder="events">
+                                <!-- We can create categories in the future if we would like to -->
+                                <!-- <optgroup label="Categories"> -->
+                                <option value="Camping">Camping</option>
+                                <option value="Events">Events</option>
+                                <option value="Exercise">Exercise</option>
+                                <option value="Children">Children</option>
+                                <option value="Hardware">Hardware</option>
+                                <option value="Medical">Medical</option>
+                                <option value="Outdoor">Outdoor</option>
+                                <option value="Discover passes">Discover passes</option>
+                                <option value="Games">Games</option>
+
+                                <!-- </optgroup>
+                <optgroup label="Mobile">
+                    <option value="android_developer">Android Developer</option>
+                    <option value="ios_developer">iOS Developer</option>
+                    <option value="mobile_designer">Mobile Designer</option>
+                </optgroup> -->
+                            </select>
+
+                            <label class="upload-form" for="itemCost">Replacement Cost? </label>
+                            <input class="upload-form" type="text" id="cost" placeholder="$50.00" name="itemCost">
+
+
+                            <label class="upload-form">Is this item currently available for loan?</label>
+                            <input class="upload-form" type="radio" id="available" value="1" name="availability">
+                            <label for="available" class="light">Yes</label><br>
+
+                            <input class="upload-form" type="radio" id="notAvailable" value="0" name="availability">
+                            <label for="notAvailable" class="light last">No</label>
+
+                            <label class="upload-form" for="community">Which commmunity is this listing for?</label>
+                            <select class="upload-form" id="community_id" name="community" placeholder="Community">
+                                <option value="1">East Bay</option>
+                                <option value="2">Peninsula</option>
+                                <option value="3">South Bay</option>
+                            </select>    
+
+
+                            <label class="upload-form">Upload a picture of your item</label>
+                            <input class="upload-form" type="file" name="image" id="filename" /> 
+                            <button id="upload_widget" class="cloudinary-button">Upload image to database</button>
+                            <!-- placeholder for uploaded image -->
+                            <img id="uploadedimage" src="" />
+
+                        </fieldset>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button onclick="listingFormHandler()" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </body>
+                    </form>
+                    
+            </div>
+        </div>
+    </div>
+</div>
