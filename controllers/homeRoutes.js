@@ -16,7 +16,13 @@ router.get('/community/:id', /* withAuth, */ async (req, res) => {
   try {
     // Get all materials and JOIN with user data and community data
     const communityData = await Community.findByPk( req.params.id, {
-      include: [ { model: Material, attributes: ['material_name', 'cost', 'availability', 'description', 'user_id'], } ],
+      include: [ { model: Material, 
+        attributes: ['id', 'material_name', 'cost', 'availability', 'description', 'user_id', 'availability', 'category', 'filename', 'community_id' ], 
+          include: {
+          model: User,
+          attributes: ["name"],
+        }, 
+      },],
     });
 
     // Serialize data so the template can read it
@@ -24,7 +30,7 @@ router.get('/community/:id', /* withAuth, */ async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('community', { 
-      communities, 
+      ...communities, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {

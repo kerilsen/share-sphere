@@ -1,13 +1,30 @@
-<section class="card">
-  <!-- The contents of this card links to the gallery page using the gallery ID -->
-  <a href="/material/{{material.id}}">
-    <!-- The card contains the material name as the card header -->
-    <header>{{material.material_name}}</header>
-    <!-- add if available button here -->
-    {{#if material.available}}
-     <span class="label label-success">Available</span> 
-    {{/if}}
-    <!-- The card will contain an image of the item from cloudinary -->
-    <img src="/images/{{material.[0].filename}}" alt="{{material.[0].description}}">
-  </a>
-</section>
+<div class="col mx-2 my-3 justify-content-center">
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <!-- The contents of this card links to the gallery page using the gallery ID -->
+      <a href="/material/{{id}}">
+        <h4 class="card-title">{{material_name}}</h4>
+      </a>
+      {{#if filename}}
+      <img src="https://res.cloudinary.com/dzfv4d1jg/image/{{filename}}">
+      {{else}}
+      <img src="../images/landing_page/icons{{placeholder_image category}}">
+      {{/if}}
+      <div>
+        <p>{{category}}</p>
+      </div>
+      <!-- add if available button here -->
+      {{#if availability}}
+            <p>This item is available for borrowing!</p>
+            {{else}}
+            <p>This item is not currently available for borrowing.</p>
+            {{/if}}
+      <b><p class="card-subtitle mb-2 text-body-secondary">Posted by {{user.name}}</p></b>
+      <div class="card-text">
+        <p>
+          {{description}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
