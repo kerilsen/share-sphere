@@ -1,7 +1,7 @@
 const User = require('./User');
 const Material = require('./Material');
 const Community = require('./Community');
-const CommunityMembers = require('./communityMembers');
+const CommunityMembers = require('./CommunityMembers');
 const Zipcode = require('./Zipcode');
 const Post = require('./Post');
 const Comment = require('./Comment');
@@ -34,19 +34,19 @@ Zipcode.belongsTo(Community, {
 });
 
 User.belongsToMany(Community, {
-    through: {
-        model: CommunityMembers,
-        unique: false
-    },
-    as: "populated_communities"
+  through: {
+    model: CommunityMembers,
+    unique: false
+  },
+  as: "populated_communities"
 });
 
 Community.belongsToMany(User, {
-    through: {
-        model: CommunityMembers,
-        unique: false
-    },
-    as: "community_members"
+  through: {
+    model: CommunityMembers,
+    unique: false
+  },
+  as: "community_members"
 });
 
 User.hasMany(Post, {
