@@ -1,7 +1,6 @@
 /* style for the main landing page */
  
 .hero-image {
-  background-image: url('images/landing_page/Landing_Page_Hero.png');
   background-size: cover;
   height: 500px;
 }
