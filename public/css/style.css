@@ -28,3 +28,133 @@
     color: white;
     
 }
+
+/* CUSTOM STYLING FOR UPLOADING A FORM  */
+
+*, *:before.upload-form, *:after.upload-form {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  body.upload-form {
+    font-family: 'Nunito', sans-serif;
+    color: #384047;
+  }
+  
+  form.upload-form {
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+  }
+  
+  h1.upload.form {
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+  
+  input.upload-form[type="text"],
+  input.upload-form[type="text-area"],
+  input.upload-form[type="file"],
+  input.upload-form[type="password"],
+  input.upload-form[type="date"],
+  input.upload-form[type="datetime"],
+  input.upload-form[type="email"],
+  input.upload-form[type="number"],
+  input.upload-form[type="search"],
+  input.upload-form[type="tel"],
+  input.upload-form[type="time"],
+  input.upload-form[type="url"],
+  textarea.upload-form,
+  select.upload-form {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  
+  
+  input.upload-form[type="radio"],
+  input.upload-form[type="checkbox"] {
+    margin: 0 4px 8px 0;
+  }
+  
+  select.upload-form {
+    padding: 6px;
+    height: 32px;
+    border-radius: 2px;
+  }
+  
+  button.upload-form {
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    background-color: #443FDE;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #443FDE;
+    border-width: 1px 1px 3px;
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    margin-bottom: 10px;
+  }
+  
+  fieldset.upload-form {
+    margin-bottom: 30px;
+    border: none;
+  }
+  
+  legend.upload-form {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+  
+  label.upload-form {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  label.light.upload-form {
+    font-weight: 300;
+    display: inline;
+  }
+  
+  label.last.upload-form {
+    margin-bottom: 30px;
+  }
+  
+  .number.upload-form {
+    background-color: #443FDE;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 100%;
+  }
+  
+  @media screen and (min-width: 480px) {
+  
+    form.upload-form {
+      max-width: 480px;
+    }
+  
+  }
+  
