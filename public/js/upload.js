@@ -17,6 +17,9 @@ cloudinary.config({
 const storage = multer.diskStorage({});
 const upload = multer({ storage });
 
+// To Do: 
+
+
 // This is a mess - need Evelyn to help incorporate into MVC
 // Handle image upload
 app.post('/upload', upload.single('image'), async (req, res) => {
