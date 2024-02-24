@@ -54,7 +54,7 @@ As a Member of a community, I wish to join a community sharing platform so that 
 
 ## Demo
 <p align="left">
-  <img src="https://github.com/kerilsen/share-sphere/blob/hotfix/readme-updates/public/images/ShareSphere-Demo.tiniest.gif" alt="Demo" width="100">
+  <img src="https://github.com/kerilsen/share-sphere/blob/hotfix/readme-updates/public/images/ShareSphere-Demo.tiniest.gif" alt="Demo" width="500">
 </p>
 
 
