@@ -1,0 +1,34 @@
+<div class="col mx-2 my-3 justify-content-center">
+    <div class="card text-center">
+        <div class="card-body">
+            <h4 class="card-title" value="{{id}}" id="materialID">{{material_name}}</h4>
+            <p class="card-subtitle mb-2 text-body-secondary">Posted by {{user.name}}</p>
+            <div class="card-text">
+                <div>
+                    {{#if filename}}
+                    <img
+                        src="https://res.cloudinary.com/sharesphere/image/upload/c_thumb,g_auto,h_250,q_auto,w_250/{{filename}}">
+                    {{else}}
+                    <img src="../images/landing_page/icons{{placeholder_image category}}">
+                    {{/if}}
+                </div>
+                <p>{{category}}</p>
+                <p>{{description}}</p>
+                {{#if availability}}
+                <p>This item is available for borrowing!</p>
+                {{else}}
+                <p>This item is not currently available for borrowing.</p>
+                {{/if}}
+                <p>This item has a replacement cost of {{cost}}</p>
+                <p>Contact {{user.name}} about this listing at {{user.email}}.</p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-light"><a href="/community/{{community.id}}">Return</a></button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/new-listing.js"></script>
+<script src="../js/cloudinary.js"></script>
+<script src="../js/logout.js"></script>

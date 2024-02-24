@@ -24,5 +24,12 @@ module.exports = {
       } else if (category === 'Games') {
         return '/event-game-passes.png'
       }
+    },
+
+    checkMaterialID: (id) => {
+      material_ID = document.getElementById(materialID);
+      if (id === material_ID) {
+        return true;
+      }
     }
 };

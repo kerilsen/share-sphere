@@ -1,49 +1,13 @@
 <div class="col mx-2 my-3 justify-content-center">
   <div class="card" style="width: 18rem">
     <div class="card-body">
-      <!-- The contents of this card links to the gallery page using the gallery ID -->
-      <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#detailModal">
-        <h4 class="card-title">{{material_name}}</h4>
-      </button>
+      {{!-- <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#detailModal">
+        <h4 class="card-title" value="{{id}}" id="materialID">{{material_name}}</h4>
+      </button> --}}
 
-      <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="card-title">{{this.material_name}}</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div>
-                {{#if filename}}
-                <img src="https://res.cloudinary.com/sharesphere/image/upload/c_thumb,g_auto,h_250,q_auto,w_250/{{filename}}">
-                {{else}}
-                <img src="../images/landing_page/icons{{placeholder_image category}}" width="250" height="250">
-                {{/if}}
-              </div>
-              <p class="card-subtitle mb-2 text-body-secondary">Posted by {{this.user.name}}</p>
-              <p>{{this.category}}</p>
-              <p>{{this.description}}</p>
-              {{#if this.availability}}
-              <p class="card-text">Item is currently available to borrow.</p>
-              <!-- On click, email request to owner and add to requests on their profile? -->
-              {{!-- <a href="#" class="btn btn-primary">Request item</a> --}}
-              {{/if}}
-              {{#unless this.availability}}
-              <p class="card-text">Item is currently not available to borrow.</p>
-              {{/unless}}
-              <p>This item has a replacement cost of {{this.cost}}</p>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {{!-- <a href="/material/{{id}}">
+      <a href="/material/{{id}}">
         <h4 class="card-title">{{material_name}}</h4>
-      </a> --}}
+      </a>
       {{#if filename}}
       <img src="https://res.cloudinary.com/sharesphere/image/upload/c_thumb,g_auto,h_250,q_auto,w_250/{{filename}}">
       {{else}}
@@ -52,7 +16,6 @@
       <div class="row">
         <p>{{category}}</p>
       </div>
-      <!-- add if available button here -->
       {{#if availability}}
       <p>This item is available for borrowing!</p>
       {{else}}
@@ -69,3 +32,36 @@
     </div>
   </div>
 </div>
+
+{{!-- <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="card-title">{{material_name}}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                {{#if filename}}
+                <img src="https://res.cloudinary.com/sharesphere/image/upload/c_thumb,g_auto,h_250,q_auto,w_250/{{filename}}">
+                {{else}}
+                <img src="../images/landing_page/icons{{placeholder_image category}}" width="250" height="250">
+                {{/if}}
+              </div>
+              <p class="card-subtitle mb-2 text-body-secondary">Posted by {{user.name}}</p>
+              <p>{{category}}</p>
+              <p>{{description}}</p>
+              {{#if availability}}
+              <p class="card-text">Item is currently available to borrow.</p>
+              {{/if}}
+              {{#unless availability}}
+              <p class="card-text">Item is currently not available to borrow.</p>
+              {{/unless}}
+              <p>This item has a replacement cost of {{cost}}</p>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> --}}
