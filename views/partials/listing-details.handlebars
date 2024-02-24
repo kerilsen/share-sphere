@@ -1,12 +1,4 @@
-<div class="col mx-2 my-3 justify-content-center">
-  <div class="card" style="width: 18rem">
-    <div class="card-body">
-      <!-- The contents of this card links to the gallery page using the gallery ID -->
-      <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#detailModal">
-        <h4 class="card-title">{{material_name}}</h4>
-      </button>
-
-      <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+<div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -40,32 +32,3 @@
           </div>
         </div>
       </div>
-
-      {{!-- <a href="/material/{{id}}">
-        <h4 class="card-title">{{material_name}}</h4>
-      </a> --}}
-      {{#if filename}}
-      <img src="https://res.cloudinary.com/sharesphere/image/upload/c_thumb,g_auto,h_250,q_auto,w_250/{{filename}}">
-      {{else}}
-      <img src="../images/landing_page/icons{{placeholder_image category}}">
-      {{/if}}
-      <div class="row">
-        <p>{{category}}</p>
-      </div>
-      <!-- add if available button here -->
-      {{#if availability}}
-      <p>This item is available for borrowing!</p>
-      {{else}}
-      <p>This item is not currently available for borrowing.</p>
-      {{/if}}
-      <b>
-        <p class="card-subtitle mb-2 text-body-secondary">Posted by {{user.name}}</p>
-      </b>
-      <div class="card-text">
-        <p>
-          {{description}}
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
