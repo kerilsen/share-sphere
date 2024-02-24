@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { Community } = require('../../models');
-/* const withAuth = require('../../utils/auth'); */
 
-router.post('/', /* withAuth, */ async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newCommunity = await Community.create({
       ...req.body,
@@ -15,27 +14,7 @@ router.post('/', /* withAuth, */ async (req, res) => {
   }
 });
 
-
-router.put('/:id', async (req, res) => {
-    // updates a community by id
-    try {
-      const communityData = await Community.update(req.body, {
-        where: {
-          id: req.params.id,
-          user_id: req.session.user_id,
-        },
-      });
-      if (!communityData[0]) {
-        res.status(404).json({ message: 'No community with this id!' });
-        return;
-      }
-      res.status(200).json(communityData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-});
-
-router.delete('/:id', /* withAuth, */ async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const communityData = await Community.destroy({
       where: {

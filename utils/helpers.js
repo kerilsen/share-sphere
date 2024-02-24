@@ -10,7 +10,7 @@ module.exports = {
       } else if (category === 'Events') {
         return '/event-supplies.png'
       } else if (category === 'Exercise') {
-        return '/exercise-supplies.png>'
+        return '/exercise-icon.png'
       } else if (category === 'Children') {
         return '/children-equipment.png'
       } else if (category === 'Hardware') {
@@ -23,6 +23,13 @@ module.exports = {
         return '/event-game-passes.png'
       } else if (category === 'Games') {
         return '/event-game-passes.png'
+      }
+    },
+
+    checkMaterialID: (id) => {
+      material_ID = document.getElementById(materialID);
+      if (id === material_ID) {
+        return true;
       }
     }
 };

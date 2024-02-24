@@ -23,3 +23,20 @@ const listingFormHandler = async (event) => {
       }
     }
 };
+
+const deleteListing = async (id) => {
+  try {
+    const response = await fetch('/api/materials/' + id,  {
+      method: 'DELETE'
+    })
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to delete listing.');
+    }
+  } catch (error) {
+    console.error('Delete error:', error);
+    alert('An error occurred while deleting listing.');
+  }
+};

@@ -11,64 +11,71 @@
         </h3>
     </div>
     {{#each materials as |material|}}
-    <div class="row mb-4 col-md-5 post">
-        <div class="">
-            <h3>
-                <a href="/material/{{material.id}}">{{material.material_name}}</a>
-            </h3>
-            <p>Posted by {{material.user.name}}</p>
-            {{#if material.availability}}
-            <p>This item is available for borrowing!</p>
-            {{else}}
-            <p>This item is not currently available for borrowing.</p>
-            {{/if}}
-            <p>
-                Category: {{material.category}}
-            </p>
-        </div>
-        <div class="">
-            <p>
-                {{material.description}}
-            </p>
-        </div>
-    </div>
-    {{/each}}
-    <div>
-        <div>
-            <div class="">
-                {{> new-listing}}
-            </div>
-        </div>
-    </div>
-</div>
-
-<div>
-    <div>
-        <h3>
-            Your Active Posts
-        </h3>
-    </div>
-    {{#each posts as |post| }}
     <div class="card">
         <div class="card-body">
             <h3 class="card-title">
-                <a href="/messageBoardPost/{{post.id}}">{{post.title}}</a>
+                <a href="/material/{{material.id}}">{{material.material_name}}</a>
             </h3>
-            <p class="card-subtitle">Created by {{post.user.name}} on {{format_date post.date_created}}</p>
+            <p class="card-subtitle">Posted by {{material.user.name}}</p>
+            <div class="card-text">
+                <div>
+                    {{#if material.availability}}
+                    <p>This item is available for borrowing!</p>
+                    {{else}}
+                    <p>This item is not currently available for borrowing.</p>
+                    {{/if}}
+                    <p>
+                        Category: {{material.category}}
+                    </p>
+                </div>
+                <p>
+                    {{material.description}}
+                </p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-danger" onclick="deleteListing({{material.id}})">Delete Listing</button>
+            </div>
         </div>
-        <div class="card-text">
-            <p>
-                {{post.post_body}}
-            </p>
+        {{/each}}
+        <div>
+            <div>
+                <div class="">
+                    {{> new-listing}}
+                </div>
+            </div>
         </div>
     </div>
-    {{/each}}
-    <div class="card">
-        <div class="card-body">
-            {{> new-post}}
-        </div>
-    </div>
-</div>
 
-<script src="./js/new-post.js"></script>
-<script src="./js/new-listing.js"></script>
+    <div>
+        <div>
+            <h3>
+                Your Active Posts
+            </h3>
+        </div>
+        {{#each posts as |post| }}
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">
+                    <a href="/messageBoardPost/{{post.id}}">{{post.title}}</a>
+                </h3>
+                <p class="card-subtitle">Created by {{post.user.name}} on {{format_date post.date_created}}</p>
+            </div>
+            <div class="card-text">
+                <p>
+                    {{post.post_body}}
+                </p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-danger" onclick="deletePost({{post.id}})">Delete Post</button>
+            </div>
+        </div>
+        {{/each}}
+        <div class="card">
+            <div class="card-body">
+                {{> new-post}}
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/new-post.js"></script>
+    <script src="./js/new-listing.js"></script>

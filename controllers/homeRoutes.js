@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/community/:id', /* withAuth, */ async (req, res) => {
+router.get('/community/:id', withAuth, async (req, res) => {
   try {
     // Get all materials and JOIN with user data and community data
     const communityData = await Community.findByPk( req.params.id, {
@@ -20,7 +20,7 @@ router.get('/community/:id', /* withAuth, */ async (req, res) => {
         attributes: ['id', 'material_name', 'cost', 'availability', 'description', 'user_id', 'availability', 'category', 'filename', 'community_id' ], 
           include: {
           model: User,
-          attributes: ["name"],
+          attributes: ['name', 'username'],
         }, 
       },],
     });
@@ -38,17 +38,17 @@ router.get('/community/:id', /* withAuth, */ async (req, res) => {
   }
 });
 
-router.get('/material/:id', /* withAuth, */ async (req, res) => {
+router.get('/material/:id', withAuth, async (req, res) => {
     try {
       // Get material by ID, JOIN with user data and community data
       const materialData = await Material.findByPk(req.params.id, {
-        include: [ { model: User, attributes: ['name', 'email'], }, { model: Community, attributes: ['community_name'] } ],
+        include: [ { model: User, attributes: ['name', 'username', 'email'], }, { model: Community, attributes: ['community_name', 'id'] } ],
       });
   
       const materials = materialData.get({ plain: true });
   
-      res.render('material', {
-        materials,
+      res.render('communityListing', {
+        ...materials,
         logged_in: req.session.logged_in
       });
     } catch (err) {
@@ -64,7 +64,7 @@ router.get('/profile', withAuth, async (req, res) => {
         include: [{ model: Post, 
           include: {
           model: User,
-          attributes: ["name"],
+          attributes: ["name", "username"],
         }, }, 
         { model: Material, 
           include: {
@@ -88,7 +88,7 @@ router.get('/messageBoard', withAuth, async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
-      include: [{ model: User, attributes: ['name', 'filename'], },],
+      include: [{ model: User, attributes: ['name', 'username', 'filename'], },],
     });
 
     // Serialize data so the template can read it
@@ -110,7 +110,7 @@ router.get('/messageBoardPost/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["id", "name"],
+          attributes: ["id", "name", "username"],
         },
         {
           model: Comment,
