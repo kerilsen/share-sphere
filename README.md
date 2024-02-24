@@ -53,7 +53,7 @@ As a Member of a community, I wish to join a community sharing platform so that 
 - **Environment Variables:** Safeguarded API keys and sensitive information.
 
 ## Demo
-![Demo](https://www.kapwing.com/w/WwmiTqFUmx) 
+![Demo](https://github.com/kerilsen/share-sphere/blob/hotfix/readme-updates/public/images/ShareSphere-Demo.tiniest.gif){width="300px"} 
 
 ## Future Enhancements
 - **Creating Community:** Options for creating community, tag, or category to increase user engagement.
