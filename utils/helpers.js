@@ -10,7 +10,7 @@ module.exports = {
       } else if (category === 'Events') {
         return '/event-supplies.png'
       } else if (category === 'Exercise') {
-        return '/exercise-supplies.png>'
+        return '/exercise-icon.png'
       } else if (category === 'Children') {
         return '/children-equipment.png'
       } else if (category === 'Hardware') {

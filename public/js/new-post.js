@@ -26,7 +26,7 @@ const deletePost = async (id) => {
     })
 
     if (response.ok) {
-      document.location.replace('/profile'); // Redirect to homepage upon successful logout
+      document.location.replace('/profile');
     } else {
       alert('Failed to delete post.');
     }

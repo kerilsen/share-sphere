@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { Material } = require('../../models');
-/* const withAuth = require('../../utils/auth'); */
 
-router.post('/', /* withAuth, */ async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newMaterial = await Material.create({
       ...req.body,
@@ -35,7 +34,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-router.delete('/:id', /* withAuth, */ async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const materialData = await Material.destroy({
       where: {

@@ -18,7 +18,7 @@
                 {{#if filename}}
                 <img src="https://res.cloudinary.com/sharesphere/image/upload/c_thumb,g_auto,h_250,q_auto,w_250/{{filename}}">
                 {{else}}
-                <img src="../images/landing_page/icons{{placeholder_image category}}">
+                <img src="../images/landing_page/icons{{placeholder_image category}}" width="250" height="250">
                 {{/if}}
               </div>
               <p class="card-subtitle mb-2 text-body-secondary">Posted by {{this.user.name}}</p>
@@ -47,7 +47,7 @@
       {{#if filename}}
       <img src="https://res.cloudinary.com/sharesphere/image/upload/c_thumb,g_auto,h_250,q_auto,w_250/{{filename}}">
       {{else}}
-      <img src="../images/landing_page/icons{{placeholder_image category}}">
+      <img src="../images/landing_page/icons{{placeholder_image category}}" width="250" height="250">
       {{/if}}
       <div class="row">
         <p>{{category}}</p>
