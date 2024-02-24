@@ -54,9 +54,9 @@ As a Member of a community, I wish to join a community sharing platform so that 
 
 ## Demo
 - *Note: The low quality of the GIF is due to the video's length.*
-<p align="left">
-  <img src="https://github.com/kerilsen/share-sphere/blob/hotfix/readme-updates/public/images/ShareSphere-Demo.tiniest.gif" alt="Demo" width="400">
-</p>
+![Demo](<p align="left">
+  <img src="/public/images/ShareSphere-Demo.tiniest.gif" alt="Demo" width="400">
+</p>)
 
 
 ## Future Enhancements
