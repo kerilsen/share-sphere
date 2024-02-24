@@ -1,20 +1,35 @@
- # Community Sharing Platform
+# Community Sharing Platform
+by  Coast to Coast Crusaders, Team 2!
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 1. [Overview](#overview)
 2. [User Story](#user-story)
-3. [Features](#features)
-4. [Key Technologies](#key-technologies)
-5. [Project Structure](#project-structure)
+3. [Product Analysis](#product-analysis)
+4. [Features](#features)
+5. [Key Technologies & Installations](#key-technologies--installations)
+6. [Project Structure](#project-structure)
 7. [Demo](#demo)
 8. [Future Enhancements](#future-enhancements)
-9. [License](#license)
+9. [Contributors](#contributors)
 
 ## Overview
-Welcome to the Community Sharing Platform, your personalized hub for borrowing, lending, and sharing items within your neighborhood, group, or organization. Our platform aims to facilitate a vibrant sharing ecosystem, enabling members to connect, share resources, and thrive together.
+Welcome to the Community Sharing Platform, your personalized hub for borrowing, lending, and sharing items.Our platform aims to facilitate a vibrant sharing ecosystem, enabling members to connect, share resources, and thrive together.
+**Sharing Opportunities** 
+- **Sporting Goods**
+- **Camping Gear**
+- **Children Items**
+- **Games and Attractions**
+- **So much more...**
 
 ## User Story
-Join our community sharing platform today and start borrowing, lending, and sharing with your neighbors and peers. Together, we can build a more connected and sustainable future.
+As a Member of a community, I wish to join a community sharing platform so that I may borrow, lend, and share with neighbors and peers. This will help me build a more connected and sustainable future.
+
+## Product Analysis 
+- **Strength:** Community building and resource optimization
+- **Weakness:** Initial trust-building and competition
+- **Opportunities:** Potential expansion and forming partnerships
+- **Threats:** Privacy concerns and regulatory challenges
 
 ## Features
 - **Connect:** Connect with members of your community to borrow, lend, and share items.
@@ -23,23 +38,39 @@ Join our community sharing platform today and start borrowing, lending, and shar
 - **Search Functionality:** Options for searching by zip code, community, tag, or category to streamline item discovery.
 - **Pages:** Includes landing page, login/sign-up page, and user portal for managing listings and interactions.
 
-## Key Technologies
+
+## Key Technologies & Installations
 - **Node.js and Express.js:** For RESTful API to handle data retrieval and addition.
 - **Handlebars.js:** Templating engine for dynamic content rendering.
-- **MySQL and Sequelize ORM:** Managing user information, materials lists, and potentially message board interactions.
- 
+- **MySQL and Sequelize ORM:** Managing user information, listings, and potentially message board interactions.
+- **Cloudindary** Cloud storage for image library of listings. 
+- **Other Dependencies** - bcrypt, cloudinary, dotenv, express, multer. 
 
 ## Project Structure
-- **Breakdown of Tasks:** MVC structure, login authentication, view components, database management, and routes/controllers setup.
+- **Breakdown of Tasks:** Used MVC structure, login authentication, view components, database management, and routes/controllers setup.
 - **MVC Structure:** Organized into models, views, and controllers for efficient development and maintenance.
-- **Authentication:** Implements express-session and cookies for user authentication and security.
-- **Environment Variables:** Safeguards API keys and sensitive information for protection.
+- **Authentication:** Implemented express-session and cookies for user authentication and security as well as user input validation.
+- **Environment Variables:** Safeguarded API keys and sensitive information.
 
 ## Demo
-
+![Demo](https://www.kapwing.com/w/WwmiTqFUmx) 
 
 ## Future Enhancements
-- **Ratings:** Rate the Members to give other users feedback on the experience, ease of use, communication, timeliness, condition of item, etc. 
+- **Creating Community:** Options for creating community, tag, or category to increase user engagement.
+- **Loans:** Parnterships with Loan Providers or Credit Card Services.
+- **Parnterships:** Parnterships with Furniture Stores or Business to Business Providers.
+- **Ratings:** Rate the Members to give other users feedback on the experience, ease of use, communication, timeliness, condition of item, etc.
+- **Residence Verification:** Ensuring Members are verified to share within their community.
+- **Search Functionality:** Options for searching by zip code, community, tag, or category to streamline item discovery.
+- **Chats Social:** Messaging and communicating with one another online.
+- **Profile Sharing:** Building online friendships.
+
+## Contributors 
+- **UI/UX & Agile Lead:** Benita I.
+- **Database, Cloud & Deployment:**  Keri S.
+- **Lead Engineer:** Evelyn E.
+- **Community Pages & SEO:** Manya N.
+- **Architecture & Design:** Melissa W.
 
 
 ## License
