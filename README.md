@@ -1,6 +1,6 @@
 # Community Sharing Platform
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 by  Coast to Coast Crusaders, Team 2!
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 1. [Overview](#overview)
