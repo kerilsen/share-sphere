@@ -18,3 +18,20 @@ const postFormHandler = async (event) => {
       }
     }
 };
+
+const deletePost = async (id) => {
+  try {
+    const response = await fetch('/api/posts/' + id,  {
+      method: 'DELETE'
+    })
+
+    if (response.ok) {
+      document.location.replace('/profile'); // Redirect to homepage upon successful logout
+    } else {
+      alert('Failed to delete post.');
+    }
+  } catch (error) {
+    console.error('Delete error:', error);
+    alert('An error occurred while deleting post.');
+  }
+};
