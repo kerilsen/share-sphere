@@ -5,7 +5,7 @@ const listingFormHandler = async (event) => {
     const category = document.querySelector('#category').value;
     const cost = document.querySelector('#cost').value;
     const availability = document.querySelector('input[name="availability"]:checked').value;
-    const filename = document.querySelector('#filename').value;
+    const filename = document.getElementById("uploadedimage").src;
     const community_id = document.querySelector('#community_id').value;
   
     if (material_name && description && category && cost && availability && community_id) {

@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#listingModal">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#listingModal" data-backdrop="static">
     Make A New Listing
 </button>
 
@@ -53,10 +53,10 @@
 
 
                             <label class="upload-form" for="availability">Is this item currently available for loan?</label>
-                            <input class="upload-form" type="radio" id="available" value="1" name="available">
+                            <input class="upload-form" type="radio" id="available" value="1" name="availability">
                             <label for="available" class="light">Yes</label><br>
 
-                            <input class="upload-form" type="radio" id="notAvailable" value="0" name="notAvailable">
+                            <input class="upload-form" type="radio" id="notAvailable" value="0" name="availability">
                             <label for="notAvailable" class="light last">No</label>
 
                             <label class="upload-form" for="community_id">Which commmunity is this listing for?</label>
@@ -72,7 +72,7 @@
                         </fieldset>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button onclick="listingFormHandler()" type="submit" class="btn btn-primary">Submit</button>
+                            <button onclick="listingFormHandler()" id="listingSubmit" type="submit" class="btn btn-primary">Submit</button>
                         </div>
                 </body>
                 </form>
