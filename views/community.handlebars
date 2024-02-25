@@ -7,6 +7,9 @@
     </h3>
     <p>
       Don't see the item you're looking for? Try posting a request on the <a href="/messageBoard">message board</a>.
+      {{!-- <button id="upload_widget" class="cloudinary-button">Add a picture</button>
+                            <!-- placeholder for uploaded image -->
+                            <img id="uploadedimage" src="" /> --}}
     </p>
     <div>
       {{> new-listing}}
@@ -14,16 +17,17 @@
   </div>
   <div class="container-sm text-center">
 
-      <section class="row justify-center">
-        {{#each materials as |material|}}
-        {{> community-details}}
-        {{/each}}
-      </section>
+    <section class="row justify-center">
+      {{#each materials as |material|}}
+      {{> community-details}}
+      {{/each}}
+    </section>
 
   </div>
 
 </div>
 
-<script src="../js/new-listing.js"></script>
-<script src="../js/cloudinary.js"></script>
-<script src="../js/logout.js"></script>
+<script src="/js/new-listing.js"></script>
+<script src="/js/logout.js"></script>
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="/js/cloudinary.js" type="text/javascript"></script>
