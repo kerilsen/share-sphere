@@ -25,16 +25,16 @@
                             <!-- If we want to have multiple parts of the form, we could use this -->
                             <!-- <legend><span class="number">1</span> Item Info </legend> -->
 
-                            <label class="upload-form" for="itemName">Item Name:</label>
+                            <label class="upload-form" for="material_name">Item Name:</label>
                             <input class="upload-form" type="text" id="material_name" placeholder="i.e. Shade canopy"
-                                name="itemName">
+                                name="material_name">
 
-                            <label class="upload-form" for="itemDescription">Brief Description:</label>
-                            <textarea class="upload-form" rows="4" cols="50" name="itemDescription" id="description"
+                            <label class="upload-form" for="description">Brief Description:</label>
+                            <textarea class="upload-form" rows="4" cols="50" name="description" id="description"
                                 placeholder="A white 10' x 10' 'one person setup' shade canopy with wheel bag and ground stakes"></textarea><br><br>
 
-                            <label class="upload-form" for="categories">Category:</label>
-                            <select class="upload-form" id="category" name="categories" placeholder="events">
+                            <label class="upload-form" for="category">Category:</label>
+                            <select class="upload-form" id="category" name="category" placeholder="events">
                                 <!-- We can create categories in the future if we would like to -->
                                 <!-- <optgroup label="Categories"> -->
                                 <option value="Camping">Camping</option>
@@ -46,17 +46,10 @@
                                 <option value="Outdoor">Outdoor</option>
                                 <option value="Discover passes">Discover passes</option>
                                 <option value="Games">Games</option>
-
-                                <!-- </optgroup>
-                <optgroup label="Mobile">
-                    <option value="android_developer">Android Developer</option>
-                    <option value="ios_developer">iOS Developer</option>
-                    <option value="mobile_designer">Mobile Designer</option>
-                </optgroup> -->
                             </select>
 
-                            <label class="upload-form" for="itemCost">Replacement Cost? </label>
-                            <input class="upload-form" type="text" id="cost" placeholder="$50.00" name="itemCost">
+                            <label class="upload-form" for="cost">Replacement Cost? </label>
+                            <input class="upload-form" type="text" id="cost" placeholder="$50.00" name="cost">
 
 
                             <label class="upload-form">Is this item currently available for loan?</label>
@@ -66,28 +59,23 @@
                             <input class="upload-form" type="radio" id="notAvailable" value="0" name="availability">
                             <label for="notAvailable" class="light last">No</label>
 
-                            <label class="upload-form" for="community">Which commmunity is this listing for?</label>
-                            <select class="upload-form" id="community_id" name="community" placeholder="Community">
+                            <label class="upload-form" for="community_id">Which commmunity is this listing for?</label>
+                            <select class="upload-form" id="community_id" name="community_id" placeholder="Community">
                                 <option value="1">East Bay</option>
                                 <option value="2">Peninsula</option>
                                 <option value="3">South Bay</option>
-                            </select>    
-
-
-                            <label class="upload-form">Upload a picture of your item</label>
-                            <input class="upload-form" type="file" name="image" id="filename" /> 
-                            <button id="upload_widget" class="cloudinary-button">Upload image to database</button>
+                            </select>
+                            <button id="upload_widget" class="cloudinary-button">Add a picture</button>
                             <!-- placeholder for uploaded image -->
                             <img id="uploadedimage" src="" />
 
                         </fieldset>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button onclick="listingFormHandler()" type="submit" class="btn btn-primary">Submit</button>
-                    </div>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button onclick="listingFormHandler()" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
                 </body>
-                    </form>
-                    
+                </form>
             </div>
         </div>
     </div>
