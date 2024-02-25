@@ -7,7 +7,7 @@
                 <div>
                     {{#if filename}}
                     <img
-                        src="https://res.cloudinary.com/sharesphere/image/upload/c_thumb,g_auto,h_250,q_auto,w_250/{{filename}}">
+                        src="https://res.cloudinary.com/sharesphere/image/upload/c_scale,q_auto,w_750/{{filename}}">
                     {{else}}
                     <img src="../images/landing_page/icons{{placeholder_image category}}">
                     {{/if}}
@@ -20,7 +20,7 @@
                 <p>This item is not currently available for borrowing.</p>
                 {{/if}}
                 <p>This item has a replacement cost of {{cost}}</p>
-                <p>Contact {{user.name}} about this listing at {{user.email}}.</p>
+                <p>Contact {{user.name}} about this listing at <a href="mailto:{{user.email}}">{{user.email}}</a>.</p>
             </div>
         </div>
         <div class="card-footer">
