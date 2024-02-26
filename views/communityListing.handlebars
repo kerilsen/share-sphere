@@ -7,9 +7,9 @@
                 <div>
                     {{#if filename}}
                     <img
-                        src="https://res.cloudinary.com/sharesphere/image/upload/c_scale,q_auto,w_750/{{filename}}">
+                        src="https://res.cloudinary.com/sharesphere/image/upload/c_scale,q_auto,w_750/{{filename}}" alt="image uploaded by user of item: {{material_name}}">
                     {{else}}
-                    <img src="../images/landing_page/icons{{placeholder_image category}}">
+                    <img src="../images/landing_page/icons{{placeholder_image category}}" alt="blue icon graphic of {{placeholder_image category}}">
                     {{/if}}
                 </div>
                 <p>{{category}}</p>

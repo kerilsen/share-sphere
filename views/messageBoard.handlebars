@@ -18,9 +18,9 @@
             <div class="card" style="width: 18rem">
                 <div class="card-body">
                     {{#if post.user.filename}}
-                        <img class="icon" width="35rem" height="35rem" src="/images/users/{{post.user.filename}}">
+                        <img class="icon" width="35rem" height="35rem" src="/images/users/{{post.user.filename}}" alt="profile picture of user {{post.user.filename}}">
                         {{else}}
-                        <img class="icon" width="35rem" height="35rem" src="/images/users/profile_placeholder.png">
+                        <img class="icon" width="35rem" height="35rem" src="/images/users/profile_placeholder.png" alt="blue icon of anonymous profile">
                         {{/if}}
                     <h3 class="card-title">
                         <a href="/messageBoardPost/{{post.id}}">{{post.title}}</a>
