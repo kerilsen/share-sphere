@@ -8,9 +8,9 @@
       <div class="modal-body">
         <div>
           {{#if filename}}
-          <img src="https://res.cloudinary.com/sharesphere/image/upload/c_crop,q_auto,w_500/{{filename}}">
+          <img src="https://res.cloudinary.com/sharesphere/image/upload/c_crop,q_auto,w_500/{{filename}}" alt="image uploaded by user of {{material_name}}">
           {{else}}
-          <img src="../images/landing_page/icons{{placeholder_image category}}">
+          <img src="../images/landing_page/icons{{placeholder_image category}}" alt="blue icon of {{placehold_image category}}">
           {{/if}}
         </div>
         <p class="card-subtitle mb-2 text-body-secondary">Posted by {{user.name}}</p>
