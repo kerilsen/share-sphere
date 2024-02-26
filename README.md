@@ -35,8 +35,8 @@ As a Member of a community, I wish to join a community sharing platform so that 
 - **Connect:** Connect with members of your community to borrow, lend, and share items.
 - **Share:** Share resources and items within your community, fostering a spirit of cooperation and collaboration.
 - **Thrive:** Contribute to a sustainable and supportive community environment where everyone benefits.
-- **Search Functionality:** Options for searching by zip code, community, tag, or category to streamline item discovery.
-- **Pages:** Includes landing page, login/sign-up page, and user portal for managing listings and interactions.
+- **Post and comment functionality:** Options for making posts for items of interest and comment in response.
+- **Pages:** Includes landing page, login/sign-up page, community pages and user profile for managing listings as well as a message board page for viewing other posts and having interactions.
 
 
 ## Key Technologies & Installations
