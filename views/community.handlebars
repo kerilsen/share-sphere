@@ -1,15 +1,17 @@
 <div class="container">
   <h2 class="community_name text-center mxy-3">{{community_name}}</h2>
 
+     <!-- Search input field -->
+  <div class="text-center mxy-3">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+  </div>
+
   <div class="text-center mxy-3">
     <h3>
       Browse the listings below to see what is available for borrowing!
     </h3>
     <p>
       Don't see the item you're looking for? Try posting a request on the <a href="/messageBoard">message board</a>.
-      {{!-- <button id="upload_widget" class="cloudinary-button">Add a picture</button>
-                            <!-- placeholder for uploaded image -->
-                            <img id="uploadedimage" src="" /> --}}
     </p>
     <div>
       {{> new-listing}}

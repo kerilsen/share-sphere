@@ -40,3 +40,35 @@ const deleteListing = async (id) => {
     alert('An error occurred while deleting listing.');
   }
 };
+
+// Function to filter listings based on search query
+const filterListings = (query) => {
+  // Get all card elements representing listings
+  const cards = document.querySelectorAll(".card");
+
+  // Convert search query to lowercase for case-insensitive matching
+  const searchQuery = query.toLowerCase();
+
+  // Loop through each card element
+  cards.forEach((card) => {
+    // Get the text content of the card
+    const cardText = card.textContent.toLowerCase();
+
+    // Check if the card text contains the search query
+    if (cardText.includes(searchQuery)) {
+      // If the card matches the search query, display it
+      card.style.display = "block";
+    } else {
+      // If the card does not match the search query, hide it
+      card.style.display = "none";
+    }
+  });
+};
+
+// Add event listener to the search input field
+const searchInput = document.getElementById("searchInput");
+if (searchInput) {
+  searchInput.addEventListener("input", function () {
+    filterListings(this.value);
+  });
+}
