@@ -57,6 +57,7 @@ As a Member of a community, I wish to join a community sharing platform so that 
 <p align="left">
   <img src="/public/images/ShareSphere-Demo.tiniest.gif" alt="Demo" width="400">
 </p>
+Deployed URL: https://share-sphere-68ac42e28aff.herokuapp.com/ 
 
 
 ## Future Enhancements
